@@ -1,0 +1,19 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "This is a blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spades-S/Spades-blog.git"
+  },
+  "author": "Spades",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spades-S/Spades-blog/issues"
+  },
+  "homepage": "https://github.com/Spades-S/Spades-blog#readme"
+}
