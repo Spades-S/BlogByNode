@@ -20,6 +20,12 @@ b -> c
 
 `require循环引用并不会报错，导致的结果是require的结果总是空对象，原因是b require了a，a又去require了b，此时b还没有初始化好，所以只能拿到初始值{}`
 
+
+
+> config-lite
+
+config-lite 是一个轻量的读取配置文件模块。config-lite会根据环境变量的不同从当前执行进程的目录下的config 目录加载不同的配置文件。
+
 ​	  
 
 
