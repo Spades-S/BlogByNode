@@ -19,7 +19,7 @@ router.post('/:postId/edit', checkLogin, function(req, res, next){
 });
 
 router.get('/:postId/remove', checkLogin, function(req, res, next){
-    res.send(req.flash());
+   res.send(req.flash());
 });
 
 router.post('/:postId/comment', checkLogin, function(req, res, next){

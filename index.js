@@ -10,7 +10,7 @@ var pkg = require('./package.json');
 var app = express();
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('views engine', 'ejs');
+app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -27,9 +27,29 @@ app.use(session({
 
 app.use(flash());
 
+app.use(require('express-formidable')({
+    uploadDir: path.join(__dirname, 'public/img'),
+    keepExtensions: true
+}));
+
+app.locals.blog = {
+    title: pkg.name,
+    description: pkg.description
+};
+
+app.use(function(req, res, next){
+    res.locals.user = req.session.user;
+    res.locals.success = req.flash('success').toString();
+    res.locals.error = req.flash('error').toString();
+    next();
+});
+
+
+
 routes(app);
 
+
 app.listen(config.port, function(){
-    console.log('${pkg.name} listening on port ${config.port}');
+    
     console.log(`${pkg.name} listening on port ${config.port}`);
 });
