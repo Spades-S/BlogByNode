@@ -1,0 +1,16 @@
+<div class="nav-setting">
+    <div class="ui buttons">
+        <div class="ui floating dropdown button">
+            <i class="icon bars"></i>
+            <div class="menu">
+                <% if(user){ %>
+                    <a class="item" herf='posts?author=<%= user._id%>'> 个人主页</a>
+                    <a class="item" herf= '/posts/create'>发表文章</a>
+                <% }else{ %>
+                    <a class="item" herf='/signin'>登录</a>
+                    <a class="item" herf='/signup'>注册</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
