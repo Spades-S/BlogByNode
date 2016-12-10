@@ -16,7 +16,7 @@ router.get('/', checkNotLogin, function(req, res, next){
 //用户注册
 router.post('/', checkNotLogin, function(req, res, next){
 
-    var name = req.fields.name;
+    var name = req.fields.name;  //http request header field
     var gender = req.fields.gender;
     var bio = req.fields.bio;
     var avatar = req.files.avatar.path.split(path.sep).pop();
@@ -51,7 +51,6 @@ router.post('/', checkNotLogin, function(req, res, next){
         avatar: avatar
     };
 
-    ///////////////////there is a error//////////////////////////
     UserModel.create(user)
         .then(function(result){
             console.log('create:' + result);
