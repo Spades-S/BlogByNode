@@ -1,6 +1,6 @@
 # blog
 This is a blog
-##install dependencies
+## install dependencies
 npm install
-##run
+## run
 node index.js
